@@ -1,0 +1,34 @@
+//sorting 
+#include<iostream>
+using namespace std;
+void swap(int &a,int &b)
+{
+        int t=a;
+        a=b;
+        b=t;
+}
+void bubble(int arr[],int n)
+{
+        int i,j;
+        for(i=0;i<n-1;i++)
+        {
+                for(j=0;j<n-1-i;j++)
+                {
+                        if(arr[j]>arr[j+1])
+                        swap(arr[j],arr[j+1]);
+                }
+        }
+}
+int main()//bubble sort timeComplexity = O(n^2)...
+{
+        int n,i;
+        cout<<"\nEnter number of elements : ";
+        cin>>n;
+        cout<<"\nReading Elements of Array : ";
+        int arr[n];
+        for(i=0;i<n;i++)cin>>arr[i];
+        bubble(arr,n);
+        cout<<"\nDisplaying Sorted Array : ";
+        for(i=0;i<n;i++)cout<<arr[i]<<" ";
+        return 0;
+}
